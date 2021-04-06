@@ -10,7 +10,7 @@ import { Data } from "./Data";
 const Group = ({ name }: { name: string }) => {
   const { add, remove, setCount, count } = useContext(BehavContext);
   const { send } = useContext(SenderContext);
-  const [select, setSelect] = useState<undefined | boolean>();
+  const [select, setSelect] = useState<boolean>(false);
   const tick = useRef<boolean>(true);
   useEffect(() => {
     if (select === true) {
@@ -18,31 +18,16 @@ const Group = ({ name }: { name: string }) => {
     } else {
       remove(name);
     }
-    if (typeof select === "boolean") {
-      tick.current = false;
-    } else if (typeof select === "undefined" && count !== 0) {
-      tick.current = true;
-    }
   }, [select]);
-  useEffect(() => {
-    if (tick.current === true) {
-      if (count !== 0) {
-        setCount(count - 1);
-      }
-    } else {
-      setCount(count + 1);
-    }
-  }, [tick.current]);
+
   return (
     <>
       <SelectButton
         selected={select === true}
-        setSelected={(val) => {
+        setSelected={() => {
           if (!select) {
             setSelect(true);
             send("1");
-          } else if (select === true) {
-            setSelect(undefined);
           }
         }}
         style={{ marginRight: "2rem" }}
@@ -52,12 +37,10 @@ const Group = ({ name }: { name: string }) => {
       <SelectButton
         style={{ float: "right" }}
         selected={select === false}
-        setSelected={(val) => {
-          if (select === true || select === undefined) {
+        setSelected={() => {
+          if (select) {
             setSelect(false);
             send("0");
-          } else if (select === false) {
-            setSelect(undefined);
           }
         }}
       >
@@ -103,7 +86,6 @@ const Page1 = () => {
         );
       })}
       <Button
-        disabled={count < 4}
         style={{
           marginTop: "2rem",
           float: "right",
