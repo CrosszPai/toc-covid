@@ -1,9 +1,5 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import Card from "./Card";
-import Button from "./Button";
-import SelectButton from "./SelectButton";
-import { Data } from "../Data";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import Page1 from "../Page1";
 import Page2 from "../Page2";
@@ -32,7 +28,7 @@ const SideBar = () => {
     <Container>
       <HeaderBox>
         <img style={{ marginRight: "1rem" }} src="fist.svg" />
-        <p>KMITL GO FIGHT</p>
+        <p style={{ alignSelf: "center" }}>KMITL GO FIGHT</p>
         <img style={{ marginLeft: "auto" }} src="people.svg" />
       </HeaderBox>
       <Body>

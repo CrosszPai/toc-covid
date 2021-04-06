@@ -8,9 +8,9 @@ import { SenderContext } from "./context/SenderContext";
 const Triangle = ({ status }: any) => {
   const color = useMemo(() => {
     switch (status) {
-      case "เสี่ยง":
-        return "#EB5757";
       case "เข้าเกณฑ์":
+        return "#EB5757";
+      case "เสี่ยง":
         return "#F2994A";
       case "เฝ้าระวัง":
         return "#27AE60";
@@ -41,9 +41,9 @@ const StatusBox = styled.div<{
 }>`
   background: ${(props) => {
     switch (props.status) {
-      case "เสี่ยง":
-        return "#EB5757";
       case "เข้าเกณฑ์":
+        return "#EB5757";
+      case "เสี่ยง":
         return "#F2994A";
       case "เฝ้าระวัง":
         return "#27AE60";

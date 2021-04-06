@@ -51,16 +51,22 @@ function App() {
               mode="play"
               machine={machine}
               key="123"
-              onEventTap={(data) => {
-                send(data.eventType);
-              }}
               state={state}
               style={{
                 width: "100%",
                 overflow: "scroll",
               }}
             />
-            <div style={{ padding: "1rem" }}>{words}</div>
+            <div
+              style={{
+                padding: "1rem",
+                border: "solid 2px black",
+                height: "auto",
+                fontSize: "1.2rem",
+              }}
+            >
+              Accepted words : {words}
+            </div>
           </div>
           <SideBar />
         </div>
