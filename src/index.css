@@ -5,13 +5,13 @@
 
 body {
   margin: 0;
-  font-family: "supermarket", sans-serif;
+  font-family: supermarket, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  font-family: "supermarket", sans-serif;
+  font-family: supermarket, sans-serif;
   margin: 0;
   line-height: 1.6;
 }
