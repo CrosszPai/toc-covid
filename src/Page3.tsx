@@ -69,9 +69,9 @@ const Page3 = () => {
         return 20;
       case "เฝ้าระวัง":
         return 90;
-      case "เข้าเกณฑ์":
-        return 125;
       case "เสี่ยง":
+        return 125;
+      case "เข้าเกณฑ์":
         return 180;
     }
   }, [val]);
